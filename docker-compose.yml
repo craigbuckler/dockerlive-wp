@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:5
+    container_name: mysql
+    environment:
+    volumes:
+    ports:
+    networks:
+    restart: on-failure
+
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    depends_on:
+      - mysql
+    environment:
+    volumes:
+    ports:
+    networks:
+    restart: on-failure
+
+volumes:
+
+networks:
